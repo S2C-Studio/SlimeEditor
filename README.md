@@ -1,0 +1,2 @@
+# SlimeEditor
+由ScerX所制作的基于Python的编程语言Slime的IDLE
