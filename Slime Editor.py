@@ -21,12 +21,25 @@ def openFile():
     #询问文件路径
     path = filedialog.askopenfilename(title="选择打开的文件",filetypes=(("sli files", "*.sli"),))
     #打开并读取文件
-    file = open(path,"r",encoding='utf-8')
-    fileIn = file.read()
+    if path != "none":
+        file = open(path,"r",encoding='utf-8')
+        fileIn = file.read()
+        file.close()
+    #清空文本框
+    text.delete('1.0','end')
     #把内容写入到文本框
     text.insert(END,fileIn)
 def saveFile():
-    pass
+    #询问路径
+    path = filedialog.asksaveasfilename(title="保存文件",filetypes=(("sli files", "*.sli"),))
+    #写入文件
+    if path != "none":
+        file = open(path,"w",encoding='utf-8')
+        fileIn = text.get('0.0','end')
+        file.write(fileIn)
+        file.close()
+        #弹出保存成功信息
+        tkinter.messagebox.showinfo(title='提示', message='保存成功！') 
 def saveInAnotherFile():
     pass
 #——————分割线——————
