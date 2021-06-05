@@ -117,7 +117,7 @@ window['menu']=menuBar
 #创建一个滚动条
 scroll = Scrollbar()
 #创建全屏文本框
-text = Text(window,height=640,fg="blue",selectbackground='green',yscrollcommand=scroll.set)
+text = Text(window,height=640,fg="black",selectbackground='green',yscrollcommand=scroll.set)
 scroll.pack(side=RIGHT,fill=Y)
 text.pack()
 scroll.config(command=text.yview)
